@@ -1,4 +1,4 @@
-.cards{
+.family{
     border: 2px solid gray;
     border-radius: 15px;
     padding: 25px;
@@ -11,9 +11,9 @@
     color: #388bfd;
 }
 
-.pic{
-    height: 320px;
-    width: 180px;
+.familypic{
+    height: 300px;
+    width: 350px;
 }
 
 .desc{
