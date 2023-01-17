@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import {Rick_Sanchez} from "./components/rickandmorty/rick_sanchez";
+import {Morty_smith} from "./components/rickandmorty/morty_smith";
+import {Summer_smith} from "./components/rickandmorty/summer_smith";
+import {Beth_smith} from "./components/rickandmorty/beth_smith";
+import {Jerry_smith} from "./components/rickandmorty/jerry_smith";
+import {Adjudicator_rick} from "./components/rickandmorty/adjudicator_rick";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Rick_Sanchez/>
+            <Morty_smith/>
+            <Summer_smith/>
+            <Beth_smith/>
+            <Jerry_smith/>
+            <Adjudicator_rick/>
+        </div>
+
+    );
 }
 
 export default App;
