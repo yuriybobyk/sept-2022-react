@@ -1,6 +1,7 @@
 import {Launch} from "../Launch/Launch";
 import {useEffect, useState} from "react";
 import {launchService} from "../api/launchService";
+import './Launches.css'
 const Launches = () => {
     const [launches, setLaunches] = useState([]);
 useEffect(() =>{
@@ -8,7 +9,7 @@ useEffect(() =>{
 
 },[])
     return (
-        <div>
+        <div className={'spaceX'}>
             {
                 launches.filter(value => value.launch_year !== '2020')
                     .map(launch => <Launch key={launch.flight_number} launch={launch} />)

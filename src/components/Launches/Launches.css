@@ -1,0 +1,7 @@
+.spaceX{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: center;
+    gap: 9px;
+}
