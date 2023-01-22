@@ -2,9 +2,9 @@ const Post = ({post, setPostDetails}) => {
     const {id, title} = post;
     return (
         <div>
-            <div>id: {id}</div>
-            <div>post title: {title}</div>
-            <button onClick={() => setPostDetails()}>Details</button>
+            <div className={'id'}>ID: {id}</div>
+            <div className={'title'}>Post title: {title}</div>
+            <button className={'btn'} onClick={()=> setPostDetails(post)}>See Details</button>
         </div>
     );
 };
