@@ -9,7 +9,7 @@ useEffect(() =>{
 
 },[])
     return (
-        <div className={'spaceX'}>
+        <div className={'mission'}>
             {
                 launches.filter(value => value.launch_year !== '2020')
                     .map(launch => <Launch key={launch.flight_number} launch={launch} />)
