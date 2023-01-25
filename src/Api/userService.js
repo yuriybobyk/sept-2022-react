@@ -3,7 +3,7 @@ import {urls} from "../Endpoints";
 
 const userService = {
     getAll: () => axiosService.get(urls.users),
-    create:(newUser) => axiosService.post(urls.users, newUser)
+    createUser: (data) => axiosService.post(urls.users, data)
 }
 
 export {userService}

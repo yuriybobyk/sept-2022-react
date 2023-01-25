@@ -1,22 +1,25 @@
 import {useForm} from "react-hook-form";
+import {userService} from "../../Api";
 
-const UserForm = () => {
-    const {register, handleSubmit, reset, formState:{errors, isValid}, setValue} = useForm({mode:'all'});
-    const submit = (data) => {
-        console.log(data)
+const UserForm = ({setUsers}) => {
+
+    const {register, handleSubmit, reset, formState: {errors, isValid}, getValues} = useForm()
+
+
+    const submit = async (data) => {
+
+        await userService.createUser(data)
+            .then(({data}) => setUsers((prevState) => [...prevState, data]))
+        reset();
+
     }
+
     return (
-        <div>
-            <form onSubmit={handleSubmit(submit)}>
-                <input type="text" placeholder={'Name'} {...register('Name', {required: {value:true, message: 'Empty field'}})}/>
-                {errors.Name && <div>{errors.Name.message}</div>}
-                <input type="text" placeholder={'UserName'} {...register('UserName', {required: {value:true, message: 'Empty field'}})}/>
-                {errors.UserName && <div>{errors.UserName.message}</div>}
-                <input type="text" placeholder={'Email'} {...register('Email', {required: {value:true, message: 'Empty field'}})}/>
-                {errors.Email && <div>{errors.Email.message}</div>}
-                <button>Add user</button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit(submit)}>
+            <input type="text" placeholder={'name'} {...register('name' ,{required: {value:true, message: 'Empty field'}})}/>
+            {errors.name && <div>{errors.name.message}</div>}
+            <button disabled={! isValid}>new user</button>
+        </form>
     );
 };
 
