@@ -1,5 +1,6 @@
 import {useForm} from "react-hook-form";
 import {userService} from "../../Api";
+import './UserForm.css'
 
 const UserForm = ({setUsers}) => {
 
@@ -15,11 +16,13 @@ const UserForm = ({setUsers}) => {
     }
 
     return (
+        <div className={'form'}>
         <form onSubmit={handleSubmit(submit)}>
             <input type="text" placeholder={'name'} {...register('name' ,{required: {value:true, message: 'Empty field'}})}/>
             {errors.name && <div>{errors.name.message}</div>}
-            <button disabled={! isValid}>new user</button>
+            <button className={'btn'} disabled={! isValid}>new user</button>
         </form>
+        </div>
     );
 };
 

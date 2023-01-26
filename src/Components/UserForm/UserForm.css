@@ -1,0 +1,21 @@
+.form{
+    background: #DDF7F8;
+    width: 300px;
+    height: 100px;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+
+}
+
+
+
+.btn{
+    background: #F4F269;
+    margin-left: 15px;
+    border-radius: 10px;
+    color: black;
+    font-family: "Lucida Console", "Courier New", monospace;
+}

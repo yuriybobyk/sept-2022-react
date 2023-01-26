@@ -1,0 +1,10 @@
+.users{
+    background: #DDF7F8;
+    height: 400px;
+    padding: 10px;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
