@@ -7,3 +7,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.App{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}

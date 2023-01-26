@@ -1,7 +1,9 @@
-const Comments = () => {
+import {Comment} from "../Comment/Comment";
+import './Comments.css'
+const Comments = ({comments}) => {
     return (
-        <div>
-
+        <div className={'comments'}>
+            {comments.map((comment)=> <Comment key = {comment.id} comment={comment}/>)}
         </div>
     );
 };
