@@ -1,7 +1,8 @@
+import '../Styles/HomePage.css'
 const HomePage = () => {
     return (
-        <div>
-            HomePage
+        <div className={'Home'}>
+            WelCome!
         </div>
     );
 };

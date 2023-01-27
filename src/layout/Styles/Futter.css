@@ -1,0 +1,13 @@
+.Futter{
+    display: flex;
+    height: 100px;
+    background: snow;
+    position: fixed;
+    border-radius: 15px;
+    justify-content: flex-start;
+    padding: 15px;
+    width: 98vw;
+    bottom: 0px;
+    left: 4px;
+
+}

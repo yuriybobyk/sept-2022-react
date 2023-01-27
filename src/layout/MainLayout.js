@@ -1,7 +1,13 @@
+import {Header} from "./Header";
+import {Outlet} from "react-router-dom";
+import {Futter} from "./Futter";
+
 const MainLayout = () => {
     return (
         <div>
-            MainLayout
+            <Header/>
+            <Outlet/>
+            <Futter/>
         </div>
     );
 };

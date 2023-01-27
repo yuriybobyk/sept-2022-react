@@ -1,0 +1,9 @@
+.Home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 87px;
+    margin-top: 70px;
+    color: snow;
+}
