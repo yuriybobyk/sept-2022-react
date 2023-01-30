@@ -1,7 +1,16 @@
+
+import {Outlet} from "react-router-dom";
+import {Comments} from "../../components";
+import {PostByCommentsPage} from "../PostByCommentsPage/PostByCommentsPage";
+
 const CommentsPage = () => {
     return (
         <div>
-            CommentsPage
+            <h1>Comments Page</h1>
+            <PostByCommentsPage/>
+            <hr/>
+            <Comments/>
+            <Outlet/>
         </div>
     );
 };

@@ -1,7 +1,12 @@
+import {Albums} from "../../components";
+
 const AlbumsPage = () => {
+
     return (
         <div>
-            AlbumsPage
+            <h1>Albums:</h1>
+            <hr/>
+           <Albums/>
         </div>
     );
 };

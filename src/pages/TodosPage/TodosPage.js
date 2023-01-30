@@ -1,11 +1,12 @@
-import {ToDos} from "../../components/Todos/ToDos";
-import {Outlet} from "react-router-dom";
+import './TodosPage.css'
+import {ToDos} from "../../components";
 
 const TodosPage = () => {
     return (
-        <div>
+        <div >
+            <h1>To do list:</h1>
+            <hr/>
             <ToDos/>
-            <Outlet/>
         </div>
     );
 };

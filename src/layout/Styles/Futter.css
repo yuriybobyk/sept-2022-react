@@ -1,13 +1,40 @@
 .Futter{
     display: flex;
-    height: 100px;
-    background: snow;
     position: fixed;
     border-radius: 15px;
     justify-content: flex-start;
     padding: 15px;
     width: 98vw;
-    bottom: 0px;
+    bottom: 0;
     left: 4px;
+    background: #808EDA;
 
+
+}
+
+.Icons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: snow;
+}
+
+.up{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: #808EDA;
+    border: 0;
+    display: flex;
+    position: fixed;
+    right: 40px;
+    bottom: 70px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+
+}
+
+.up:hover{
+    opacity: 1;
 }
