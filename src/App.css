@@ -1,0 +1,27 @@
+body{
+    background: #9CECFF;
+}
+h2{
+    margin-left: 20px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: snow;
+}
+
+.up{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: #808EDA;
+    border: 0;
+    display: flex;
+    position: fixed;
+    right: 40px;
+    bottom: 70px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.up:hover{
+    opacity: 1;
+}

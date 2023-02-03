@@ -1,6 +1,7 @@
 import {Component} from "react";
 import {postService} from "../api";
 import {PostComponent} from "./PostComponent";
+import './styles/PostsComponent.css'
 
 class PostsComponent extends Component{
     constructor(props) {
@@ -15,8 +16,7 @@ class PostsComponent extends Component{
 
     render() {
         return(
-            <div>
-                <h2>Posts:</h2>
+            <div className={'posts'}>
                 {this.state.posts.map(post=><PostComponent key={post.id} post={post}/>)}
             </div>
         )

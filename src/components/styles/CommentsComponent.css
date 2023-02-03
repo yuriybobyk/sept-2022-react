@@ -1,0 +1,13 @@
+.comments{
+    background: #6683C2;
+    border-radius: 15px;
+    width: 90%;
+    padding: 15px;
+    margin-left: 50px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+}
+

@@ -1,6 +1,7 @@
 import {Component} from "react";
 import {commentService} from "../api";
 import {CommentComponent} from "./CommentComponent";
+import './styles/CommentsComponent.css'
 
 class CommentsComponent extends Component{
     constructor(props) {
@@ -14,7 +15,7 @@ class CommentsComponent extends Component{
 
     render() {
         return(
-            <div>
+            <div className={'comments'}>
                 {this.state.comments.map(comment=><CommentComponent key={comment.id} comment={comment}/>)}
             </div>
         )
