@@ -1,7 +1,11 @@
-const Dog = () => {
+const Dog = ({dog}) => {
+
+    const [id, name]= dog;
+
     return (
         <div>
-            Dog
+            {id} : {name}
+            <button>Remove</button>
         </div>
     );
 };

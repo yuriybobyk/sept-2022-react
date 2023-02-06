@@ -1,7 +1,11 @@
-const Cat = () => {
+const Cat = ({cat}) => {
+
+    const [id, name] = cat;
+
     return (
         <div>
-            Cat
+            {id} : {name}
+            <button>Remove</button>
         </div>
     );
 };
