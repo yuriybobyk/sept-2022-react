@@ -1,9 +1,10 @@
 import {Cat} from "../Cat/Cat";
+import './Cats.css'
 
-const Cats = ({cats}) => {
+const Cats = ({cats, dispatch}) => {
     return (
-        <div>
-            {cats.map(cat=> <Cat key={cat.id} cat={cat}/> )}
+        <div className={'cats'}>
+            {cats.map(cat=><Cat key={cat.id} cat={cat} dispatch={dispatch}/>)}
         </div>
     );
 };

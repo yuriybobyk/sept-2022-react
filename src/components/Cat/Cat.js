@@ -1,11 +1,12 @@
-const Cat = ({cat}) => {
+import './Cat.css'
+const Cat = ({cat , dispatch}) => {
 
-    const [id, name] = cat;
+    const {id, name} = cat;
 
     return (
-        <div>
+        <div className={'cat'}>
             {id} : {name}
-            <button>Remove</button>
+            <button className={'btn'} onClick={()=> dispatch({type:'DELETE_CAT', payload:id})}>Remove</button>
         </div>
     );
 };

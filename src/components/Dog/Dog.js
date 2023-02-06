@@ -1,11 +1,13 @@
-const Dog = ({dog}) => {
+import './Dog.css'
 
-    const [id, name]= dog;
+const Dog = ({dog, dispatch}) => {
+
+    const {id, name}= dog;
 
     return (
-        <div>
+        <div className={'dog'}>
             {id} : {name}
-            <button>Remove</button>
+            <button className={'btn'} onClick={()=>dispatch({type:'DELETE_DOG', payload:id})}>Remove</button>
         </div>
     );
 };

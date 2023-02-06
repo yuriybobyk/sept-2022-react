@@ -1,9 +1,11 @@
+import './Dogs.css'
+
 import {Dog} from "../Dog/Dog";
 
-const Dogs = ({dogs}) => {
+const Dogs = ({dogs, dispatch}) => {
     return (
-        <div>
-            {dogs.map(dog=> <Dog key={dog.id} dog={dog}/> )}
+        <div className={'dogs'}>
+            {dogs.map(dog=> <Dog key={dog.id} dog={dog} dispatch={dispatch}/> )}
         </div>
     );
 };
