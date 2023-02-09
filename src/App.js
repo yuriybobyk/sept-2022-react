@@ -1,6 +1,6 @@
 
 import './App.css';
-import {Header, Users} from "./components";
+import {Header, PostHeader, Posts, Users} from "./components";
 
 function App() {
   return (
@@ -8,6 +8,9 @@ function App() {
         <Header/>
         <hr/>
         <Users/>
+          <PostHeader/>
+          <hr/>
+          <Posts/>
       </div>
   );
 }

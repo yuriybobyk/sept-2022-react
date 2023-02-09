@@ -1,5 +1,6 @@
 import {useDispatch} from "react-redux";
 import {userActions} from "../../redux";
+import {Button} from "@mui/material";
 
 const User = ({user}) => {
 
@@ -12,7 +13,7 @@ const User = ({user}) => {
             <div>ID: {id}</div>
             <div>Name: {name}</div>
             <div>UserName: {username}</div>
-            <button onClick={()=>dispatch(userActions.setSelectedUser(user))} >Select</button>
+            <Button variant={"contained"} onClick={()=>dispatch(userActions.getById({id}))}>Select user</Button>
         </div>
     );
 };

@@ -1,20 +1,20 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {userService} from "../../api";
+import {postService} from "../../api";
 
 const initialState={
-    users:[],
+    posts:[],
     errors:null,
     loading:null,
-    selectedUser:null
+    selectedPost:null
 }
 
 const getAll = createAsyncThunk(
-    'userSlice/getAll',
+    'postSlice/getAll',
     async (_, {rejectWithValue})=>{
         try {
-            const {data} = await userService.getAll();
+            const {data} = await postService.getAll();
             return data
-        }catch (e){
+        } catch (e){
             return rejectWithValue(e.response.data())
         }
 
@@ -23,50 +23,55 @@ const getAll = createAsyncThunk(
 
 
 const getById = createAsyncThunk(
-    'userSlice/getById',
+    'postSlice/getById',
     async ({id}, {rejectWithValue})=>{
         try {
-            const {data} = await userService.getById(id);
+            const {data} = await postService.getById(id);
             return data
-        } catch (e){
+        }catch (e){
             return rejectWithValue(e.response.data)
         }
-
     }
 )
 
 
-const userSlice =  createSlice({
-    name: 'userSlice',
+const postSlice = createSlice({
+    name: 'postSlice',
     initialState,
     reducers:{
+
+        setSelectedPost:(state, action)=>{
+            state.selectedPost = action.payload
+        }
+
     },
     extraReducers:{
         [getAll.fulfilled]: (state, action)=>{
             state.loading = false
-            state.users = action.payload
+            state.posts = action.payload
         },
         [getAll.rejected]: (state, action)=>{
             state.loading = false
-            state.users = action.payload
+            state.posts = action.payload
         },
         [getAll.pending]: (state)=>{
             state.loading = true
         },
         [getById.fulfilled]: (state, action)=>{
-            state.selectedUser = action.payload
+            state.selectedPost = action.payload
         }
+
     }
-});
+})
 
-const {reducer:userReducer, actions:{setSelectedUser}} = userSlice;
+const {reducer:postReducer, actions:{ setSelectedPost}} = postSlice;
 
-const userActions = {
+const postActions = {
     getAll,
-    setSelectedUser,
+    setSelectedPost,
     getById
 }
 
 export {
-    userReducer, userActions
+    postReducer, postActions
 }
