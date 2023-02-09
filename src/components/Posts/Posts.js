@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import {postService} from "../../api";
 import {postActions} from "../../redux/slices/postSlice";
 import {Post} from "../Post/Post";
+import './Posts.css'
 
 const Posts = () => {
 
@@ -14,9 +15,9 @@ const Posts = () => {
     },[])
 
     return (
-        <div>
-            {loading && <h1>LOADING</h1>}
-            {errors && <h1>ERROR</h1>}
+        <div className={'posts'}>
+            {loading && <h2>LOADING</h2>}
+            {errors && <h4>ERROR</h4>}
             {posts.map(post=><Post key={post.id} post={post}/>)}
         </div>
     );

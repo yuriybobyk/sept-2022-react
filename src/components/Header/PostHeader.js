@@ -1,4 +1,5 @@
 import {useSelector} from "react-redux";
+import './styles/PostHeader.css'
 
 const PostHeader = () => {
 
@@ -6,7 +7,9 @@ const PostHeader = () => {
 
     return (
         <div>
+        <div className={'postHeader'}>
             {selectedPost&& selectedPost.title}
+        </div>
         </div>
     );
 };

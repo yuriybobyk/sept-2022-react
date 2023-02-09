@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {userActions} from "../../redux";
 import {User} from "../User/User";
+import './Users.css'
 
 const Users = () => {
 
@@ -13,7 +14,7 @@ const Users = () => {
         dispatch(userActions.getAll())
     }, [])
     return (
-        <div>
+        <div className={'users'}>
             {loading && <h1>LOADING</h1>}
             {errors&& <h1>ERROR</h1>}
             {users.map(user=><User key={user.id} user={user}/>)}

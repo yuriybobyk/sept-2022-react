@@ -1,0 +1,8 @@
+.postHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    color: snow;
+    font-family: "Lucida Console", "Courier New", monospace;
+}

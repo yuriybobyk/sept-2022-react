@@ -2,6 +2,39 @@ body{
     background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
     background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
     background: linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-    transform: none!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.App{
+    width: 1300px;
+    height: 100%;
+}
+
+
+.container{
+    width: 98%;
+    height: 98%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-part{
+    padding: 5px;
+    height: 980px;
+    opacity: 0.8;
+}
+
+.post-part {
+    padding: 5px;
+    opacity: 0.8;
+    height: 100%;
 }

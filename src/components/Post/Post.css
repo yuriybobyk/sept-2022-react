@@ -1,0 +1,8 @@
+.post{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: snow;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
