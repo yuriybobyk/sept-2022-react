@@ -6,7 +6,6 @@ import {carService} from "../../api";
 const initialState = {
     cars:[],
     carForUpdate:null,
-    errors:null,
     loading:null
 };
 
@@ -35,22 +34,61 @@ const create = createAsyncThunk(
     }
 )
 
+const deleteById = createAsyncThunk(
+    'carSlice/delete',
+    async ({id}, thunkAPI)=>{
+        try {
+            await carService.deleteById(id)
+            thunkAPI.dispatch(getAll())
+
+        }catch (e){
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+
+    }
+)
+
+const updateById = createAsyncThunk(
+    'carSlice/update',
+    async ({id, car}, thunkAPI)=>{
+        try {
+            await carService.updateById(id, car);
+            thunkAPI.dispatch(getAll())
+        }catch (e){
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+
+    }
+)
+
 const carSlice =  createSlice({
     name:'carSlice',
     initialState,
-    reducers:{},
+    reducers:{
+        setCarForUpdate:(state, action)=>{
+            state.carForUpdate = action.payload
+        }
+    },
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action)=>{
                 state.cars = action.payload
+                state.loading = false
+            })
+            .addDefaultCase((state, action)=>{
+              const [actionStatus] = action.type.split('/').slice(-1);
+              state.loadind = actionStatus === 'pending';
             })
 })
 
-const {reducer:carReducer} = carSlice;
+const {reducer:carReducer, actions:{setCarForUpdate}} = carSlice;
 
 const carActions = {
     getAll,
-    create
+    create,
+    deleteById,
+    setCarForUpdate,
+    updateById
 
 }
 
