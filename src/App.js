@@ -1,18 +1,24 @@
 import './App.css';
-import {Cars, Form} from "./components";
-import {useSelector} from "react-redux";
+import {Navigate, Route, Routes} from "react-router-dom";
+import {AuthRequireLayout, MainLayout} from "./layouts";
+import {CarsPage, LoginPage, RegisterPage} from "./pages";
 
 function App() {
-    const {loading} = useSelector(state => state.cars)
+    return(
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
+                <Route index element={<Navigate to={'cars'}/>}/>
 
-  return (
-    <div className="App">
-      <Form/>
-        {loading&& <h3>Please Wait</h3>}
-      <hr/>
-      <Cars/>
-    </div>
-  );
+                <Route element={<AuthRequireLayout/>}>
+                    <Route path={'cars'} element={<CarsPage/>}/>
+                </Route>
+
+                <Route path={'login'} element={<LoginPage/>}/>
+                <Route path={'register'} element={<RegisterPage/>}/>
+            </Route>
+        </Routes>
+    )
+
 }
 
 export default App;

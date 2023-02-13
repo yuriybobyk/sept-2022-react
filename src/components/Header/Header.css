@@ -1,0 +1,18 @@
+.header{
+    height: 75px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: dodgerblue;
+}
+
+a{
+    text-decoration: none;
+    color: snow;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+}
