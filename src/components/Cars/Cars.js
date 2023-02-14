@@ -16,6 +16,10 @@ const Cars = () => {
 
     return (
         <div>
+            <div>
+                <button disabled={!prev} onClick={()=>setQuery(query=>({page:+query.get('page')-1}))}>Prev Page</button>
+                <button disabled={!next} onClick={()=>setQuery(query=>({page:+query.get('page')+1}))}>Next Page</button>
+            </div>
             {cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );
